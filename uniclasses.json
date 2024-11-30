@@ -1,0 +1,26 @@
+[
+    {
+        "Subject": "Ооп",
+        "Schedule": ["Четвер"],
+        "GroupNumber": "К-25",
+        "Specialization": "Комп'ютерні науки",
+        "Course": 2,
+        "Lecturer": "Омельчук Л. Л."
+    },
+    {
+        "Subject": "Математичний аналіз",
+        "Schedule": ["Понеділок", "Вівторок"],
+        "GroupNumber": "К-16",
+        "Specialization": "Комп'ютерні науки",
+        "Course": 1,
+        "Lecturer": "Молодцов О. І."
+    },
+    {
+        "Subject": "Системне програмування",
+        "Schedule": ["Четвер"],
+        "GroupNumber": "ТТП-31",
+        "Specialization": "Інформатика",
+        "Course": 3,
+        "Lecturer": "Панченко Т. В."
+    }
+]
