@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LabProject3.ViewModels"
+             x:Class="LabProject3.ResultsPage"
+             Title="Search Results">
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+        
+        <Label Text="Search Results"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#800080" />
+
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="183" />
+                        <ColumnDefinition Width="183" />
+                        <ColumnDefinition Width="183" />
+                        <ColumnDefinition Width="183" />
+                        <ColumnDefinition Width="183" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="Subject" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                    <Label Grid.Column="1" Text="Group" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                    <Label Grid.Column="2" Text="Specialization" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                    <Label Grid.Column="3" Text="Lecturer" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                    <Label Grid.Column="4" Text="Course" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                    <Label Grid.Column="5" Text="Schedule" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                </Grid>
+
+                <CollectionView Grid.Row="1" ItemsSource="{Binding Classes}" SelectionMode="Single" SelectedItem="{Binding SelectedClass}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="183" />
+                                    <ColumnDefinition Width="183" />
+                                    <ColumnDefinition Width="183" />
+                                    <ColumnDefinition Width="183" />
+                                    <ColumnDefinition Width="183" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Subject}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="1" Text="{Binding GroupNumber}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="2" Text="{Binding Specialization}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="3" Text="{Binding Lecturer}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="4" Text="{Binding Course}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="5" Text="{Binding FormattedSchedule}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" LineBreakMode="WordWrap" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+            <Button Text="Add New Class" Command="{Binding AddClassCommand}" BackgroundColor="#800080" TextColor="White" WidthRequest="200" />
+            <Button Text="Delete" Command="{Binding DeleteClassCommand}" IsEnabled="{Binding IsClassSelected}" BackgroundColor="#800080" TextColor="White" WidthRequest="200" />
+            <Button Text="Save JSON" Command="{Binding SaveJsonCommand}" BackgroundColor="#800080" TextColor="White" WidthRequest="200" />
+            <Button Text="Back" Command="{Binding ReturnMainPage}" BackgroundColor="#800080" TextColor="White" WidthRequest="200" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

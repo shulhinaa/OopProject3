@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabProject3.AddClassPage"
+             Title="Add New Class">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Add New Class"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#800080" />
+
+        
+        <Entry Placeholder="Subject" Text="{Binding Subject}" BackgroundColor="#E3D9F2" TextColor="#4B0082" />
+        <Entry Placeholder="Group Number" Text="{Binding GroupNumber}" BackgroundColor="#E3D9F2" TextColor="#4B0082" />
+        <Entry Placeholder="Specialization" Text="{Binding Specialization}" BackgroundColor="#E3D9F2" TextColor="#4B0082" />
+        <Entry Placeholder="Lecturer" Text="{Binding Lecturer}" BackgroundColor="#E3D9F2" TextColor="#4B0082" />
+        <Entry Placeholder="Course (number)" Text="{Binding Course}" Keyboard="Numeric" BackgroundColor="#E3D9F2" TextColor="#4B0082" />
+        <Entry Placeholder="Schedule (comma-separated)" Text="{Binding Schedule}" BackgroundColor="#E3D9F2" TextColor="#4B0082" />
+
+        
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+            <Button Text="Add" Command="{Binding AddCommand}" BackgroundColor="#800080" TextColor="White" WidthRequest="100" />
+            <Button Text="Cancel" Command="{Binding CancelCommand}" BackgroundColor="#800080" TextColor="White" WidthRequest="100" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
+
+

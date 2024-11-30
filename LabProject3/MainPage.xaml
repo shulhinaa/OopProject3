@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LabProject3.ViewModels"
+             x:Class="LabProject3.MainPage"
+             Title="JSON Search">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="StartAndExpand">
+
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Start">
+            <Button Text="Browse JSON" Command="{Binding SelectFileCommand}" BackgroundColor="Purple" TextColor="White" WidthRequest="150" />
+            <Button Text="Laboratory Info" Command="{Binding ShowInfoCommand}" BackgroundColor="Purple" TextColor="White" WidthRequest="150" />
+        </HorizontalStackLayout>
+        
+        
+        <Grid ColumnDefinitions="Auto, *, 50, Auto, *" RowDefinitions="Auto, Auto, Auto" ColumnSpacing="20" RowSpacing="20">
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Subject:" FontAttributes="Bold" VerticalOptions="Center" />
+            <Picker Grid.Row="0" Grid.Column="1" ItemsSource="{Binding SubjectOptions}" SelectedItem="{Binding SelectedSubject}"
+                    WidthRequest="200" HeightRequest="40" BackgroundColor="#E3D9F2" TextColor="Purple" />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Group Number:" FontAttributes="Bold" VerticalOptions="Center" />
+            <Picker Grid.Row="1" Grid.Column="1" ItemsSource="{Binding GroupNumberOptions}" SelectedItem="{Binding SelectedGroupNumber}"
+                    WidthRequest="200" HeightRequest="40" BackgroundColor="#E3D9F2" TextColor="Purple" />
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Specialization:" FontAttributes="Bold" VerticalOptions="Center" />
+            <Picker Grid.Row="2" Grid.Column="1" ItemsSource="{Binding SpecializationOptions}" SelectedItem="{Binding SelectedSpecialization}"
+                    WidthRequest="200" HeightRequest="40" BackgroundColor="#E3D9F2" TextColor="Purple" />
+
+            <BoxView Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Color="Gray" WidthRequest="2" VerticalOptions="Fill" HorizontalOptions="Center" />
+
+            <Label Grid.Row="0" Grid.Column="3" Text="Lecturer:" FontAttributes="Bold" VerticalOptions="Center" />
+            <Picker Grid.Row="0" Grid.Column="4" ItemsSource="{Binding LecturerOptions}" SelectedItem="{Binding SelectedLecturer}"
+                    WidthRequest="200" HeightRequest="40" BackgroundColor="#E3D9F2" TextColor="Purple" />
+
+            <Label Grid.Row="1" Grid.Column="3" Text="Course:" FontAttributes="Bold" VerticalOptions="Center" />
+            <Picker Grid.Row="1" Grid.Column="4" ItemsSource="{Binding CourseOptions}" SelectedItem="{Binding SelectedCourse}"
+                    WidthRequest="200" HeightRequest="40" BackgroundColor="#E3D9F2" TextColor="Purple" />
+
+            <Label Grid.Row="2" Grid.Column="3" Text="Day:" FontAttributes="Bold" VerticalOptions="Center" />
+            <Picker Grid.Row="2" Grid.Column="4" ItemsSource="{Binding DayOptions}" SelectedItem="{Binding SelectedDay}"
+                    WidthRequest="200" HeightRequest="40" BackgroundColor="#E3D9F2" TextColor="Purple" />
+
+        </Grid>
+
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand">
+            <Button Text="Search" Command="{Binding SearchCommand}" BackgroundColor="Purple" TextColor="White" WidthRequest="120" />
+            <Button Text="Show JSON" Command="{Binding ShowJsonCommand}" BackgroundColor="Purple" TextColor="White" WidthRequest="120" />
+            <Button Text="Clear" Command="{Binding ClearCommand}" BackgroundColor="Purple" TextColor="White" WidthRequest="120" />
+            <Button Text="Exit" Command="{Binding ExitCommand}" BackgroundColor="Purple" TextColor="White" WidthRequest="120" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

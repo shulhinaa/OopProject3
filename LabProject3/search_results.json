@@ -1,0 +1,22 @@
+[
+  {
+    "Subject": "Ооп",
+    "GroupNumber": "К-25",
+    "Specialization": "Комп'ютерні науки",
+    "Lecturer": "Омельчук Л. Л.",
+    "Course": 2,
+    "Schedule": [
+      "Четвер"
+    ]
+  },
+  {
+    "Subject": "Алгебра",
+    "GroupNumber": "К-14",
+    "Specialization": "Комп'ютерні науки",
+    "Lecturer": "Довгай",
+    "Course": 1,
+    "Schedule": [
+      "Середа"
+    ]
+  }
+]
